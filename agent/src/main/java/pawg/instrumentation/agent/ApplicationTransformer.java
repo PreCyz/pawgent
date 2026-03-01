@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.lang.instrument.ClassFileTransformer;
-import java.lang.instrument.IllegalClassFormatException;
 import java.security.ProtectionDomain;
 
 public class ApplicationTransformer implements ClassFileTransformer {
@@ -23,7 +22,7 @@ public class ApplicationTransformer implements ClassFileTransformer {
 
     @Override
     public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined,
-                            ProtectionDomain protectionDomain, byte[] classifiableBuffer) throws IllegalClassFormatException {
+                            ProtectionDomain protectionDomain, byte[] classifiableBuffer) {
         byte[] byteCode = classifiableBuffer;
 
         String finalTargetClassName = this.targetClassName.replaceAll("\\.", "/");
@@ -56,7 +55,7 @@ public class ApplicationTransformer implements ClassFileTransformer {
                 byteCode = cc.toBytecode();
                 cc.detach();
             } catch (NotFoundException | CannotCompileException | IOException e) {
-                e.printStackTrace(System.out);
+                e.printStackTrace(System.err);
             }
         }
         return byteCode;

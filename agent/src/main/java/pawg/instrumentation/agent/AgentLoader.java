@@ -10,7 +10,7 @@ import java.io.IOException;
 public class AgentLoader {
     private static final Logger LOGGER = LoggerFactory.getLogger(AgentLoader.class);
 
-    public static void main(String[] args) throws IOException, AttachNotSupportedException, AgentLoadException, AgentInitializationException {
+    static void main() throws IOException, AttachNotSupportedException, AgentLoadException, AgentInitializationException {
         String agentFilePath = "agent\\target\\Agent-jar-with-dependencies.jar";
         String applicationName = "app\\target\\Application-jar-with-dependencies.jar";
 

@@ -10,7 +10,7 @@ public class Application {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
-    public static void main(String[] args) {
+    static void main() {
         LOGGER.info("[Application] Starting application");
         var random = new Random();
 

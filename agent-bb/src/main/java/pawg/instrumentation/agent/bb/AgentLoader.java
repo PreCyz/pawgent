@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 public class AgentLoader {
     private static final Logger LOGGER = Logger.getLogger(AgentLoader.class.getName());
 
-    static void main(String[] args) throws IOException, AttachNotSupportedException, AgentLoadException, AgentInitializationException {
+    static void main() throws IOException, AttachNotSupportedException, AgentLoadException, AgentInitializationException {
         String agentFilePath = "agent-bb\\target\\Agent-BB-jar-with-dependencies.jar";
         String applicationName = "app\\target\\Application-jar-with-dependencies.jar";
 
