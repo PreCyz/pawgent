@@ -1,0 +1,5 @@
+Agent-Class: pawg.instrumentation.agent.Pawgent
+Premain-Class: pawg.instrumentation.agent.Pawgent
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+Main-Class: pawg.instrumentation.agent.AgentLoader
